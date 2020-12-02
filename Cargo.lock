@@ -8,6 +8,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "day2"
+version = "0.1.0"
+dependencies = [
+ "utils 0.1.0",
+]
+
+[[package]]
 name = "utils"
 version = "0.1.0"
 
