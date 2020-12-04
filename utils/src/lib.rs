@@ -16,3 +16,10 @@ where
         .map(|s| s.parse::<T>().expect("failed to parse"))
         .collect()
 }
+
+pub fn read_grid(path: &str) -> Vec<Vec<char>> {
+    read_strings(path)
+        .iter()
+        .map(|s| s.chars().collect::<Vec<char>>())
+        .collect()
+}
