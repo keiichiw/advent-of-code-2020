@@ -42,16 +42,25 @@ fn test_parse() {
         ret,
         (
             Color {
-                adj: "light red bag".to_string(),
-                name: "light".to_string(),
+                adj: "light".to_string(),
+                name: "red".to_string(),
             },
-            vec![(
-                1,
-                Color {
-                    adj: "bright".to_string(),
-                    name: "white".to_string(),
-                }
-            )]
+            vec![
+                (
+                    1,
+                    Color {
+                        adj: "bright".to_string(),
+                        name: "white".to_string(),
+                    }
+                ),
+                (
+                    2,
+                    Color {
+                        adj: "muted".to_string(),
+                        name: "yellow".to_string(),
+                    }
+                )
+            ]
         )
     );
 }
