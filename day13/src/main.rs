@@ -26,6 +26,27 @@ fn part1() {
     println!("Part 1: {}", ans);
 }
 
+#[allow(clippy::many_single_char_names)]
+fn ext_gcd(a: i64, b: i64, x: &mut i64, y: &mut i64) -> i64 {
+    let mut d = a;
+    if b != 0 {
+        d = ext_gcd(b, a % b, y, x);
+        *y -= (a / b) * *x;
+    } else {
+        *x = 1;
+        *y = 0;
+    }
+    d
+}
+
+#[test]
+fn test_ext_gcd() {
+    let (a, b) = (1071, 1029);
+    let (mut x, mut y) = (0, 0);
+    let d = ext_gcd(a, b, &mut x, &mut y);
+    assert_eq!(a * x + b * y, d);
+}
+
 fn solve(arr: &[(i64, i64)]) -> i64 {
     let mut multi = 1;
     for (x, _) in arr {
@@ -76,26 +97,6 @@ fn part2() {
 
     let ans = solve(&buses);
     println!("Part 2: {}", ans);
-}
-
-fn ext_gcd(a: i64, b: i64, x: &mut i64, y: &mut i64) -> i64 {
-    let mut d = a;
-    if b != 0 {
-        d = ext_gcd(b, a % b, y, x);
-        *y -= (a / b) * *x;
-    } else {
-        *x = 1;
-        *y = 0;
-    }
-    d
-}
-
-#[test]
-fn test_ext_gcd() {
-    let (a, b) = (1071, 1029);
-    let (mut x, mut y) = (0, 0);
-    let d = ext_gcd(a, b, &mut x, &mut y);
-    assert_eq!(a * x + b * y, d);
 }
 
 fn main() {
