@@ -1,3 +1,3 @@
-# advent-of-code-2020
+# advent-of-code-2020 ![Rust workflow](https://github.com/keiichiw/advent-of-code-2020/workflows/Rust/badge.svg)
 
-My solutions for [Advent of Code 2020](https://adventofcode.com/2020).
+My solutions to [Advent of Code 2020](https://adventofcode.com/2020).
