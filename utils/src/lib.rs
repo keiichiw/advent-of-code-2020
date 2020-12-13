@@ -46,3 +46,26 @@ pub fn read_string_lists(path: &str) -> Vec<Vec<String>> {
 
     ret
 }
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct Pos {
+    pub x: i64,
+    pub y: i64,
+}
+
+impl Default for Pos {
+    fn default() -> Self {
+        Pos { x: 0, y: 0 }
+    }
+}
+
+impl std::ops::Add for Pos {
+    type Output = Self;
+
+    fn add(self, other: Self) -> Self {
+        Self {
+            x: self.x + other.x,
+            y: self.y + other.y,
+        }
+    }
+}
